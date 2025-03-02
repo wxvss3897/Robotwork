@@ -34,8 +34,13 @@ def webstream(camIx):
             print("Can't receive frames. Exiting ...")
             break
         
+        width = 1000
+        height = 550
+        
+        resized_image = cv2.resize(frame, (width, height))
+
         # Määritellään poistumisnäppäin q 
-        cv2.imshow(windowName, frame)
+        cv2.imshow(windowName, resized_image)
         if cv2.waitKey(1) == ord('q'):
             break
     
