@@ -43,6 +43,8 @@ def webstream(camIx):
         
         if cv2.waitKey(1) == ord('s'):
            cv2.imwrite("CameraShot.png", frame)
+        if cv2.waitKey(1) == ord('t'):
+            cv2.imwrite("CameraCompareShot.png", frame)
         # Määritellään poistumisnäppäin q 
         if cv2.waitKey(1) == ord('q'):
             break
