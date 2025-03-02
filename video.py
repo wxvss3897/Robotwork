@@ -39,11 +39,15 @@ def webstream(camIx):
         
         resized_image = cv2.resize(frame, (width, height))
 
-        # Määritellään poistumisnäppäin q 
         cv2.imshow(windowName, resized_image)
+        
+        if cv2.waitKey(1) == ord('s'):
+           cv2.imwrite("CameraShot.png", frame)
+        # Määritellään poistumisnäppäin q 
         if cv2.waitKey(1) == ord('q'):
             break
     
+
     # Vapautetaan lopuksi muisti ja tuhotaan ikkuna
     capture.release()
     cv2.destroyAllWindows()
